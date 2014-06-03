@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view locale="#{lokalizacija.odabraniLocale}">
+        <h:head>
+            <title>#{m.odabir_foldera_naslov}</title>
+            <link href="../../resources/css/default.css" rel="stylesheet" type="text/css" />
+        </h:head>
+        <h:body class="admin">
+            <center>
+                <h1>#{m.odabir_foldera_naslov}:</h1> <br/>
+                #{odabirFoldera.dohvatiZaIspis()}
+                <h:form class="formaAdmin">
+                    <h:selectOneListbox value="#{odabirFoldera.odabraniFolder}">                
+                        <f:selectItems value="#{odabirFoldera.fld}"/>
+                    </h:selectOneListbox>
+                    <br/>
+                    <h:commandButton value="#{m.admin_panel_gumb}" 
+                                     action="#{odabirFoldera.saljiOdabir()}"/>
+                </h:form>
+                <br/>
+                <h:link value="#{m.odabir_foldera_link}" outcome="adminPanel"/>
+                #{pregledSvihPoruka.promjeniPocetnoStanje()}
+            </center>
+        </h:body>
+    </f:view>
+</html>
+

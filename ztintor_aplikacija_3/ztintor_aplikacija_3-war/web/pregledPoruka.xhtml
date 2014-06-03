@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Pregled poruka</title>
+        <link href="../resources/css/default.css" rel="stylesheet" type="text/css" /> 
+    </h:head>
+    <h:body class="glavna">
+        <center>
+            <h1>Pregled poruka</h1>
+            <h:form id="naj" class="formepar">
+                <h:dataTable id ="tablica4" value="#{pregledPoruke.list}" var="naj" class="tablica" headerClass="zaglavlje" rowClasses="par,nepar">
+                    <h:column>
+                        <f:facet name="header">Početak</f:facet>
+                        <h:outputText value="#{naj.pocetak}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Završetak</f:facet>
+                        <h:outputText value="#{naj.zavrsetak}"/>
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Ukupno</f:facet>
+                        <h:outputText value="#{naj.ukupnoPoruka}"/>
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Ispravno</f:facet>
+                        <h:outputText value="#{naj.ispravnoPoruka}"/>
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Neispravno</f:facet>
+                        <h:outputText value="#{naj.neispravnoPoruka}"/>
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Brisanje</f:facet>
+                        <h:form>
+                            <h:commandButton value="Briši"
+                                             action="#{pregledPoruke.brisi()}">
+                                <f:setPropertyActionListener target="#{pregledPoruke.porukaID}"
+                                                             value="#{naj.pocetak}"/>
+                            </h:commandButton>
+                        </h:form>
+                    </h:column>
+                </h:dataTable>
+                
+                <h:link outcome="doc" value="Dokumentacija"/><br/>
+            </h:form>
+        </center>
+    </h:body>
+
+</html>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS konfiguracija</comment>
+<entry key="server.database">jdbc:mysql://127.0.0.1/</entry>
+<entry key="admin.username">admin</entry>
+<entry key="admin.password">nwtis_foi</entry>
+<entry key="admin.database">mysql</entry>
+<entry key="user.username">root</entry>
+<entry key="user.password"></entry>
+<entry key="user.database">nwtis_ztintor_bp_1</entry>
+<entry key="driver.database.odbc">sun.jdbc.odbc.JdbcOdbcDriver</entry>
+<entry key="driver.database.mysql">com.mysql.jdbc.Driver</entry>
+<entry key="driver.database.derby">org.apache.derby.jdbc.ClientDriver</entry>
+<entry key="driver.database.postgresql">org.postgresql.Driver</entry>
+<entry key="wbKod">A5668197607</entry>
+<entry key="interval">100</entry>
+<entry key="port">8000</entry>
+<entry key="primatelj">servis@nwtis.nastava.foi.hr</entry>
+<entry key="posiljatelj">servis@nwtis.nastava.foi.hr</entry>
+<entry key="predmet">NWTiS</entry>
+<entry key="smtp_server">localhost</entry>
+<entry key="smtp_port">25</entry>
+<entry key="email_posluzitelj">localhost</entry>
+<entry key="email_korisnik">servis@nwtis.nastava.foi.hr</entry>
+<entry key="email_lozinka">123456</entry>
+<entry key="email_ispravni">ispravno</entry>
+<entry key="email_neispravni">neispravno</entry>
+<entry key="provjera_korisnika">zoran</entry>
+<entry key="provjera_lozinke">123456</entry>
+</properties>

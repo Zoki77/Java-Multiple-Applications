@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://serveri.ws.ztintor.nwtis.foi.org/" xmlns:ns1="http://api.wxbug.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://serveri.ws.ztintor.nwtis.foi.org/">
+
+<xs:import namespace="http://api.wxbug.net/" schemaLocation="http://localhost:8084/ztintor_aplikacija_1/MeteoWS?xsd=2" />
+
+<xs:element name="dajMeteoWSPodatkeZaZip" type="tns:dajMeteoWSPodatkeZaZip" />
+
+<xs:element name="dajMeteoWSPodatkeZaZipResponse" type="tns:dajMeteoWSPodatkeZaZipResponse" />
+
+<xs:element name="dajNajcescihNZipKodova" type="tns:dajNajcescihNZipKodova" />
+
+<xs:element name="dajNajcescihNZipKodovaResponse" type="tns:dajNajcescihNZipKodovaResponse" />
+
+<xs:element name="dajSveZipKodove" type="tns:dajSveZipKodove" />
+
+<xs:element name="dajSveZipKodoveResponse" type="tns:dajSveZipKodoveResponse" />
+
+<xs:element name="dajZadnjihNZipKodova" type="tns:dajZadnjihNZipKodova" />
+
+<xs:element name="dajZadnjihNZipKodovaResponse" type="tns:dajZadnjihNZipKodovaResponse" />
+
+<xs:element name="dajZipKodoveZaInterval" type="tns:dajZipKodoveZaInterval" />
+
+<xs:element name="dajZipKodoveZaIntervalResponse" type="tns:dajZipKodoveZaIntervalResponse" />
+
+<xs:complexType name="dajZadnjihNZipKodova">
+<xs:sequence>
+<xs:element name="n" type="xs:string" minOccurs="0" />
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajZadnjihNZipKodovaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:podaciWS" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="podaciWS">
+<xs:sequence>
+<xs:element name="broj" type="xs:string" minOccurs="0" />
+<xs:element name="brzinaVjetra" type="xs:string" minOccurs="0" />
+<xs:element name="datum" type="xs:string" minOccurs="0" />
+<xs:element name="grad" type="xs:string" minOccurs="0" />
+<xs:element name="smjerVjetra" type="xs:string" minOccurs="0" />
+<xs:element name="temperatura" type="xs:string" minOccurs="0" />
+<xs:element name="tlak" type="xs:string" minOccurs="0" />
+<xs:element name="vlaga" type="xs:string" minOccurs="0" />
+<xs:element name="wbzip" type="xs:string" minOccurs="0" />
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajSveZipKodove">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="dajSveZipKodoveResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:podaciWS" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajNajcescihNZipKodova">
+<xs:sequence>
+<xs:element name="n" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajNajcescihNZipKodovaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:podaciWS" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajZipKodoveZaInterval">
+<xs:sequence>
+<xs:element name="od" type="xs:string" minOccurs="0" />
+<xs:element name="doo" type="xs:string" minOccurs="0" />
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajZipKodoveZaIntervalResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:podaciWS" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajMeteoWSPodatkeZaZip">
+<xs:sequence>
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dajMeteoWSPodatkeZaZipResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:LiveWeatherData" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8084/ztintor_aplikacija_1/MeteoWS?wsdl" uri="src/conf/xml-resources/web-service-references/MeteoWS/wsdl/localhost_8084/ztintor_aplikacija_1/MeteoWS.wsdl"/>
+    <system systemId="http://localhost:8084/ztintor_aplikacija_1/MeteoWS?xsd=1" uri="src/conf/xml-resources/web-service-references/MeteoWS/wsdl/localhost_8084/ztintor_aplikacija_1/MeteoWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8084/ztintor_aplikacija_1/MeteoWS?xsd=2" uri="src/conf/xml-resources/web-service-references/MeteoWS/wsdl/localhost_8084/ztintor_aplikacija_1/MeteoWS.xsd_2.xsd"/>
+    <system systemId="http://localhost:8081/ztintor_aplikacija_1/MeteoWS?wsdl" uri="src/conf/xml-resources/web-service-references/MeteoWS/wsdl/localhost_8081/ztintor_aplikacija_1/MeteoWS.wsdl"/>
+    <system systemId="http://localhost:8081/ztintor_aplikacija_1/MeteoWS?xsd=1" uri="src/conf/xml-resources/web-service-references/MeteoWS/wsdl/localhost_8081/ztintor_aplikacija_1/MeteoWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/ztintor_aplikacija_1/MeteoWS?xsd=2" uri="src/conf/xml-resources/web-service-references/MeteoWS/wsdl/localhost_8081/ztintor_aplikacija_1/MeteoWS.xsd_2.xsd"/>
+</catalog>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://api.wxbug.net/">
+
+<xs:complexType name="LiveWeatherData">
+<xs:sequence>
+<xs:element name="AuxTemperature" type="xs:string" minOccurs="0" />
+<xs:element name="AuxTemperatureRate" type="xs:string" minOccurs="0" />
+<xs:element name="City" type="xs:string" minOccurs="0" />
+<xs:element name="CityCode" type="xs:string" minOccurs="0" />
+<xs:element name="Country" type="xs:string" minOccurs="0" />
+<xs:element name="CurrIcon" type="xs:string" minOccurs="0" />
+<xs:element name="CurrDesc" type="xs:string" minOccurs="0" />
+<xs:element name="DewPoint" type="xs:string" minOccurs="0" />
+<xs:element name="Elevation" type="xs:int" />
+<xs:element name="ElevationUnit" type="xs:string" minOccurs="0" />
+<xs:element name="FeelsLike" type="xs:string" minOccurs="0" />
+<xs:element name="GustTime" type="xs:dateTime" />
+<xs:element name="GustWindSpeed" type="xs:string" minOccurs="0" />
+<xs:element name="GustWindSpeedUnit" type="xs:string" minOccurs="0" />
+<xs:element name="GustWindDirectionString" type="xs:string" minOccurs="0" />
+<xs:element name="GustWindDirectionDegrees" type="xs:string" minOccurs="0" />
+<xs:element name="Humidity" type="xs:string" minOccurs="0" />
+<xs:element name="HumidityUnit" type="xs:string" minOccurs="0" />
+<xs:element name="HumidityHigh" type="xs:string" minOccurs="0" />
+<xs:element name="HumidityLow" type="xs:string" minOccurs="0" />
+<xs:element name="HumidityRate" type="xs:string" minOccurs="0" />
+<xs:element name="InputLocationUrl" type="xs:string" minOccurs="0" />
+<xs:element name="MoonPhase" type="xs:int" />
+<xs:element name="MoonPhaseImage" type="xs:string" minOccurs="0" />
+<xs:element name="Pressure" type="xs:string" minOccurs="0" />
+<xs:element name="PressureUnit" type="xs:string" minOccurs="0" />
+<xs:element name="PressureHigh" type="xs:string" minOccurs="0" />
+<xs:element name="PressureLow" type="xs:string" minOccurs="0" />
+<xs:element name="PressureRate" type="xs:string" minOccurs="0" />
+<xs:element name="PressureRateUnit" type="xs:string" minOccurs="0" />
+<xs:element name="Light" type="xs:string" minOccurs="0" />
+<xs:element name="LightRate" type="xs:string" minOccurs="0" />
+<xs:element name="IndoorTemperature" type="xs:string" minOccurs="0" />
+<xs:element name="IndoorTemperatureRate" type="xs:string" minOccurs="0" />
+<xs:element name="Latitude" type="xs:double" />
+<xs:element name="Longitude" type="xs:double" />
+<xs:element name="ObDate" type="xs:string" minOccurs="0" />
+<xs:element name="ObDateTime" type="xs:dateTime" />
+<xs:element name="RainMonth" type="xs:string" minOccurs="0" />
+<xs:element name="RainRate" type="xs:string" minOccurs="0" />
+<xs:element name="RainRateMax" type="xs:string" minOccurs="0" />
+<xs:element name="RainRateUnit" type="xs:string" minOccurs="0" />
+<xs:element name="RainToday" type="xs:string" minOccurs="0" />
+<xs:element name="RainUnit" type="xs:string" minOccurs="0" />
+<xs:element name="RainYear" type="xs:string" minOccurs="0" />
+<xs:element name="State" type="xs:string" minOccurs="0" />
+<xs:element name="StationIDRequested" type="xs:string" minOccurs="0" />
+<xs:element name="StationIDReturned" type="xs:string" minOccurs="0" />
+<xs:element name="StationName" type="xs:string" minOccurs="0" />
+<xs:element name="StationURL" type="xs:string" minOccurs="0" />
+<xs:element name="Sunrise" type="xs:dateTime" />
+<xs:element name="Sunset" type="xs:dateTime" />
+<xs:element name="Temperature" type="xs:string" minOccurs="0" />
+<xs:element name="TemperatureHigh" type="xs:string" minOccurs="0" />
+<xs:element name="TemperatureLow" type="xs:string" minOccurs="0" />
+<xs:element name="TemperatureRate" type="xs:string" minOccurs="0" />
+<xs:element name="TemperatureRateUnit" type="xs:string" minOccurs="0" />
+<xs:element name="TemperatureUnit" type="xs:string" minOccurs="0" />
+<xs:element name="TimeZone" type="xs:string" minOccurs="0" />
+<xs:element name="TimeZoneOffset" type="xs:double" />
+<xs:element name="WebUrl" type="xs:string" minOccurs="0" />
+<xs:element name="WetBulb" type="xs:string" minOccurs="0" />
+<xs:element name="WindDirection" type="xs:string" minOccurs="0" />
+<xs:element name="WindDirectionAvg" type="xs:string" minOccurs="0" />
+<xs:element name="WindDirectionDegrees" type="xs:string" minOccurs="0" />
+<xs:element name="WindSpeed" type="xs:string" minOccurs="0" />
+<xs:element name="WindSpeedAvg" type="xs:string" minOccurs="0" />
+<xs:element name="WindSpeedUnit" type="xs:string" minOccurs="0" />
+<xs:element name="ZipCode" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

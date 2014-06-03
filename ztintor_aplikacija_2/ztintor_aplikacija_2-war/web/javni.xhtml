@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.index_javni}</title>
+        <link href="../resources/css/default.css" rel="stylesheet" type="text/css" /> 
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniLocale}">
+        <h1> #{m.javni_naslov}</h1>
+        <h:body class="glavna">
+            <h:form id="meteo" class="formenepar">
+                <h1>#{m.javni_meteo_naslov}</h1>
+                <h:outputText id="outputZip" value="#{m.javni_zip}"/><h:inputText id="zip" value="#{javno.zip}" /><br/>
+                <h:commandButton value="#{m.javni_gumb_ws}" action="#{javno.dajMeteoWSPodatke()}">
+                    <f:ajax render="tablica1" execute="zip" immediate="true"/>
+                </h:commandButton>
+                <h:dataTable id ="tablica1" value="#{javno.meteoPodatak}" var="p" class="tablica" headerClass="zaglavlje" rowClasses="par,nepar">
+                    <h:column>
+                        <f:facet name="header">#{m.javni_grad}</f:facet>
+                        <h:outputText value="#{p.city}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_sirina}</f:facet>
+                        <h:outputText value="#{p.latitude}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_duzina}</f:facet>
+                        <h:outputText value="#{p.longitude}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_temp}</f:facet>
+                        <h:outputText value="#{p.temperature}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_vlaga}</f:facet>
+                        <h:outputText value="#{p.humidity}"/>
+                    </h:column>       
+                </h:dataTable>
+            </h:form>
+
+            <h:form id="zadnji" class="formepar">
+                <h1>#{m.javni_zadnji_naslov}</h1>
+                <h:outputText id="outputZip" value="#{m.javni_zip}"/><h:inputText id="zip" value="#{javno.zip}" />
+                <h:outputText id="outputLasteMeteoData" value="#{m.javni_zadnjih}"/><h:inputText id="lastMeteoData" value="#{javno.zadnji}"/><br/>
+                <h:commandButton value="#{m.javni_gumb_zadnji}" action="#{javno.dajMeteoWSPodatkeZaZadnje()}">
+                    <f:ajax render="tablica2" execute="zip lastMeteoData" immediate="true"/>
+                </h:commandButton>
+                <h:dataTable id ="tablica2" value="#{javno.lista}" var="na" first="#{javno.pocetakZadnji}" rows="#{javno.rasponZadnji}" class="tablica" headerClass="zaglavlje" rowClasses="par,nepar">
+                    <h:column>
+                        <f:facet name="header">#{m.javni_zip}</f:facet>
+                        <h:outputText value="#{na.zip}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_zipWB}</f:facet>
+                        <h:outputText value="#{na.wbzip}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_grad}</f:facet>
+                        <h:outputText value="#{na.grad}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_temp}</f:facet>
+                        <h:outputText value="#{na.temperatura}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_tlak}</f:facet>
+                        <h:outputText value="#{na.tlak}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_vlaga}</f:facet>
+                        <h:outputText value="#{na.vlaga}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_brzina_vjetra}</f:facet>
+                        <h:outputText value="#{na.brzinaVjetra}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_smjer_vjetra}</f:facet>
+                        <h:outputText value="#{na.smjerVjetra}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_datum}</f:facet>
+                        <h:outputText value="#{na.datum}"/>
+                    </h:column>  
+                </h:dataTable>
+                <h:commandButton value="#{m.prethodne}" action="#{javno.prethodniZadnji()}">
+                    <f:ajax render="tablica2" execute="zip lastMeteoData" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.sljedeci}" action="#{javno.sljedeciZadnji()}">
+                    <f:ajax render="tablica2" execute="zip lastMeteoData" immediate="true"/>
+                </h:commandButton>
+            </h:form>
+
+            <h:form id="svi" class="formenepar">
+                <h1>#{m.javni_svi_naslov}</h1>
+                <h:commandButton value="#{m.javni_gumb_svi}" action="#{javno.dajSveZipKodove()}">
+                    <f:ajax render="tablica3" immediate="true"/>
+                </h:commandButton>
+                <h:dataTable id ="tablica3" value="#{javno.lista}" var="a" first="#{javno.pocetakSvi}" rows="#{javno.rasponSvi}" class="tablica" headerClass="zaglavlje" rowClasses="par,nepar">
+                    <h:column>
+                        <f:facet name="header">#{m.javni_zip}</f:facet>
+                        <h:outputText value="#{a.zip}"/>
+                    </h:column>
+                </h:dataTable>
+                <h:commandButton value="#{m.prethodne}" action="#{javno.prethodniSvi()}">
+                    <f:ajax render="tablica3" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.sljedeci}" action="#{javno.sljedeciSvi()}">
+                    <f:ajax render="tablica3" immediate="true"/>
+                </h:commandButton>
+            </h:form>
+
+            <h:form id="naj" class="formepar">
+                <h1>#{m.javni_naj_naslov}</h1>
+                <h:outputText id="outputnMeteoData" value="#{m.javni_naj}"/><h:inputText id="nMeteoData" value="#{javno.najcesci}"/><br/>
+                <h:commandButton value="#{m.javni_gumb_naj}" action="#{javno.dajNajcescihN()}">
+                    <f:ajax render="tablica4" execute="nMeteoData" immediate="true"/>
+                </h:commandButton>
+                <h:dataTable id ="tablica4" value="#{javno.lista}" var="naj" first="#{javno.pocetakNaj}" rows="#{javno.rasponNaj}" class="tablica" headerClass="zaglavlje" rowClasses="par,nepar">
+                    <h:column>
+                        <f:facet name="header">#{m.javni_zip}</f:facet>
+                        <h:outputText value="#{naj.zip}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_broj_upisa}</f:facet>
+                        <h:outputText value="#{naj.broj}"/>
+                    </h:column> 
+                </h:dataTable>
+                <h:commandButton value="#{m.prethodne}" action="#{javno.prethodniNaj()}">
+                    <f:ajax render="tablica4" execute="nMeteoData" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.sljedeci}" action="#{javno.sljedeciNaj()}">
+                    <f:ajax render="tablica4" execute="nMeteoData" immediate="true"/>
+                </h:commandButton>
+            </h:form>
+
+            <h:form id="interval" class="formenepar">
+                <h1>#{m.javni_interval_naslov}</h1>
+                <h:outputText id="outputIntervalZip" value="#{m.javni_zip}"/><h:inputText id="intervalZip" value="#{javno.zip}" />
+                <h:outputText id="outputOd" value="#{m.javni_od}"/><h:inputText id="od" value="#{javno.od}"/>
+                <h:outputText id="outputDo" value="#{m.javni_do}"/><h:inputText id="do" value="#{javno.doo}"/><br/>
+                <h:commandButton value="#{m.javni_gumb_interval}" action="#{javno.dajZaInterval()}">
+                    <f:ajax render="tablica5" execute="intervalZip od do" immediate="true"/>
+                </h:commandButton> 
+                <h:dataTable id ="tablica5" value="#{javno.lista}" var="interval" first="#{javno.pocetakInterval}" rows="#{javno.rasponInterval}" class="tablica" headerClass="zaglavlje" rowClasses="par,nepar">
+                    <h:column>
+                        <f:facet name="header">#{m.javni_zip}</f:facet>
+                        <h:outputText value="#{interval.zip}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_zipWB}</f:facet>
+                        <h:outputText value="#{interval.wbzip}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_grad}</f:facet>
+                        <h:outputText value="#{interval.grad}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_temp}</f:facet>
+                        <h:outputText value="#{interval.temperatura}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_tlak}</f:facet>
+                        <h:outputText value="#{interval.tlak}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_vlaga}</f:facet>
+                        <h:outputText value="#{interval.vlaga}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_brzina_vjetra}</f:facet>
+                        <h:outputText value="#{interval.brzinaVjetra}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_smjer_vjetra}</f:facet>
+                        <h:outputText value="#{interval.smjerVjetra}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.javni_datum}</f:facet>
+                        <h:outputText value="#{interval.datum}"/>
+                    </h:column>   
+                </h:dataTable>
+                <h:commandButton value="#{m.prethodne}" action="#{javno.prethodniInterval()}">
+                    <f:ajax render="tablica5" execute="intervalZip od do" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.sljedeci}" action="#{javno.sljedeciInterval()}">
+                    <f:ajax render="tablica5" execute="intervalZip od do" immediate="true"/>
+                </h:commandButton>
+            </h:form>
+        </h:body>
+        <h:link outcome="index" value="#{m.index_naslov}"/><br/> 
+    </f:view>
+</html>
+

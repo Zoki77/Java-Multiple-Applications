@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.index_naslov}</title>
+        <link href="../resources/css/default.css" rel="stylesheet" type="text/css" /> 
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniLocale}">
+        <h:body class="forma">
+                <h1> #{m.index_naslov}</h1>
+                <h:link outcome="login" value="#{m.index_login}"/><br/>
+                <h:link outcome="javni" value="#{m.index_javni}"/><br/>
+                <h:link outcome="user" value="#{m.index_user}"/><br/>
+                <h:link outcome="admin" value="#{m.index_admin}"/><br/>
+                <h:link outcome="doc" value="#{m.index_doc}"/><br/>
+        </h:body>
+        <h:link value="#{m.index_neuspjesan_link}" outcome="pocetna"/>
+    </f:view>
+</html>
+

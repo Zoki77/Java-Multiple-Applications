@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view locale="#{lokalizacija.odabraniLocale}">
+        <h:head>
+            <title>#{m.pregledSvih_naslov}</title>
+            <link href="../../resources/css/default.css" rel="stylesheet" type="text/css" />
+        </h:head>
+        <h:body class="admin">
+            <h1>#{pregledSvihPoruka.odabraniFolder}:</h1>
+            <h:dataTable value="#{pregledSvihPoruka.poruke}" var="p" class="tablica" headerClass="zaglavlje" rowClasses="par,nepar">
+                <h:column>
+                    <f:facet name="header">#{m.pregledSvih_id}</f:facet>
+                    <h:outputText value="#{p.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.pregledSvih_salje}</f:facet>
+                    <h:outputText value="#{p.salje}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.pregledSvih_predmet}</f:facet>
+                    <h:outputText value="#{p.predmet}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.pregledSvih_vrijeme}</f:facet>
+                    <h:outputText value="#{p.vrijeme}">
+                        <f:convertDateTime pattern="dd.MM.yyyy hh:mm:ss"/>
+                    </h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.pregledSvih_vrsta}</f:facet>
+                    <h:outputText value="#{p.vrstaPoruke}">
+                    </h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">#{m.pregledSvih_poruka}</f:facet>
+                    <h:form>
+                        <h:commandButton value="#{m.pregledSvih_pregled}"
+                                         action="#{pregledSvihPoruka.pregledPoruke()}">
+                            <f:setPropertyActionListener target="#{pregledSvihPoruka.porukaID}"
+                                                         value="#{p.id}"/>
+                        </h:commandButton>
+                    </h:form>
+                </h:column>
+            </h:dataTable><br/>
+            <h:form>
+                <h:panelGrid columns="2">
+
+                    <h:commandButton value="#{m.prethodne}" 
+                                     action="#{pregledSvihPoruka.prethodna()}"/>
+                    <h:commandButton value="#{m.sljedeci}"
+                                     action="#{pregledSvihPoruka.sljedeca()}"/>
+                </h:panelGrid>
+            </h:form>
+            <h:link value="#{m.odabir_foldera_link}" outcome="adminPanel"/>
+        </h:body>
+    </f:view>
+</html>
+
